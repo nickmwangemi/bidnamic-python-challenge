@@ -1,11 +1,17 @@
 import csv
+import os
+
 
 from records.models import AdGroup, Campaign, SearchTerm
 
 
+
+csv_dir_path = os.path.dirname(os.path.abspath(__file__))
+
+
 def run():
     # AdGroup
-    file = open("/home/nickmwangemi/Dev/bidnamic-python-challenge/scripts/adgroups.csv")
+    file = open(csv_dir_path + "/adgroups.csv")
     records = csv.reader(file, delimiter=",")
 
     adgroup_instances = []
@@ -20,10 +26,11 @@ def run():
                 )
             )
     AdGroup.objects.bulk_create(adgroup_instances)
+    print(f"Success! {len(adgroup_instances)} Ad Group instances have been loaded into the database.")
 
     # Campaign
     file = open(
-        "/home/nickmwangemi/Dev/bidnamic-python-challenge/scripts/campaigns.csv"
+        csv_dir_path + "/campaigns.csv"
     )
     records = csv.reader(file, delimiter=",")
 
@@ -36,10 +43,12 @@ def run():
                 )
             )
     Campaign.objects.bulk_create(campaign_instances)
+    print(f"Success! {len(campaign_instances)} Campaign instances have been loaded into the database.")
+
 
     # SearchTerm
     file = open(
-        "/home/nickmwangemi/Dev/bidnamic-python-challenge/scripts/search_terms.csv"
+        csv_dir_path + "/search_terms.csv"
     )
     records = csv.reader(file, delimiter=",")
 
@@ -59,3 +68,5 @@ def run():
                 )
             )
     SearchTerm.objects.bulk_create(search_term_instances)
+    print(f"Success! {len(search_term_instances)} Search term instances have been loaded into the database.")
+
