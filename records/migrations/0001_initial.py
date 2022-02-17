@@ -7,41 +7,64 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='AdGroup',
+            name="AdGroup",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('ad_group_id', models.IntegerField()),
-                ('campaign_id', models.IntegerField()),
-                ('alias', models.CharField(max_length=255)),
-                ('status', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("ad_group_id", models.IntegerField()),
+                ("campaign_id", models.IntegerField()),
+                ("alias", models.CharField(max_length=255)),
+                ("status", models.CharField(max_length=255)),
             ],
         ),
         migrations.CreateModel(
-            name='Campaign',
+            name="Campaign",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('campaign_id', models.IntegerField()),
-                ('structure_value', models.CharField(max_length=255)),
-                ('status', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("campaign_id", models.IntegerField()),
+                ("structure_value", models.CharField(max_length=255)),
+                ("status", models.CharField(max_length=255)),
             ],
         ),
         migrations.CreateModel(
-            name='SearchTerm',
+            name="SearchTerm",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date', models.DateField()),
-                ('ad_group_id', models.IntegerField()),
-                ('campaign_id', models.IntegerField()),
-                ('clicks', models.IntegerField()),
-                ('cost', models.IntegerField()),
-                ('conversion_value', models.IntegerField()),
-                ('conversions', models.IntegerField()),
-                ('search_term', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("date", models.DateField()),
+                ("ad_group_id", models.IntegerField()),
+                ("campaign_id", models.IntegerField()),
+                ("clicks", models.IntegerField()),
+                ("cost", models.IntegerField()),
+                ("conversion_value", models.IntegerField()),
+                ("conversions", models.IntegerField()),
+                ("search_term", models.CharField(max_length=255)),
             ],
         ),
     ]

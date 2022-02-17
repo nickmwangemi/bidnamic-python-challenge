@@ -6,13 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('records', '0002_alter_adgroup_ad_group_id_alter_adgroup_campaign_id_and_more'),
+        (
+            "records",
+            "0002_alter_adgroup_ad_group_id_alter_adgroup_campaign_id_and_more",
+        ),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='searchterm',
-            name='cost',
+            model_name="searchterm",
+            name="cost",
             field=models.DecimalField(decimal_places=2, max_digits=4),
         ),
     ]

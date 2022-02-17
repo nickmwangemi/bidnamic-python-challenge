@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('records', '0004_alter_searchterm_conversion_value'),
+        ("records", "0004_alter_searchterm_conversion_value"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='searchterm',
-            name='conversion_value',
+            model_name="searchterm",
+            name="conversion_value",
             field=models.DecimalField(decimal_places=2, max_digits=2),
         ),
         migrations.AlterField(
-            model_name='searchterm',
-            name='cost',
+            model_name="searchterm",
+            name="cost",
             field=models.DecimalField(decimal_places=2, max_digits=2),
         ),
     ]

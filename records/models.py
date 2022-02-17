@@ -7,6 +7,8 @@ adgroups
 - alias
 - status
 """
+
+
 class AdGroup(models.Model):
     ad_group_id = models.BigIntegerField()
     campaign_id = models.BigIntegerField()
@@ -23,6 +25,8 @@ campaigns
 - structure_value
 - status
 """
+
+
 class Campaign(models.Model):
     campaign_id = models.BigIntegerField()
     structure_value = models.CharField(max_length=255)
@@ -30,7 +34,6 @@ class Campaign(models.Model):
 
     def __str__(self):
         return f"Campaign object with {self.campaign_id} has been created."
-
 
 
 """
@@ -44,13 +47,15 @@ search_terms
 - conversions
 - search_term
 """
+
+
 class SearchTerm(models.Model):
     date = models.DateField()
     ad_group_id = models.BigIntegerField()
     campaign_id = models.BigIntegerField()
     clicks = models.BigIntegerField()
     cost = models.DecimalField(max_digits=5, decimal_places=2)
-    conversion_value =  models.DecimalField(max_digits=5, decimal_places=2)
+    conversion_value = models.DecimalField(max_digits=5, decimal_places=2)
     conversions = models.BigIntegerField()
     search_term = models.CharField(max_length=255)
 

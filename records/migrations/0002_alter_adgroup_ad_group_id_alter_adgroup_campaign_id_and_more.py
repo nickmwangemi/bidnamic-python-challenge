@@ -6,53 +6,53 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('records', '0001_initial'),
+        ("records", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='adgroup',
-            name='ad_group_id',
+            model_name="adgroup",
+            name="ad_group_id",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='adgroup',
-            name='campaign_id',
+            model_name="adgroup",
+            name="campaign_id",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='campaign',
-            name='campaign_id',
+            model_name="campaign",
+            name="campaign_id",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='searchterm',
-            name='ad_group_id',
+            model_name="searchterm",
+            name="ad_group_id",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='searchterm',
-            name='campaign_id',
+            model_name="searchterm",
+            name="campaign_id",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='searchterm',
-            name='clicks',
+            model_name="searchterm",
+            name="clicks",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='searchterm',
-            name='conversion_value',
+            model_name="searchterm",
+            name="conversion_value",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='searchterm',
-            name='conversions',
+            model_name="searchterm",
+            name="conversions",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='searchterm',
-            name='cost',
+            model_name="searchterm",
+            name="cost",
             field=models.BigIntegerField(),
         ),
     ]
