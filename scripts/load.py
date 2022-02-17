@@ -5,7 +5,6 @@ import os
 from records.models import AdGroup, Campaign, SearchTerm
 
 
-
 csv_dir_path = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -26,12 +25,12 @@ def run():
                 )
             )
     AdGroup.objects.bulk_create(adgroup_instances)
-    print(f"Success! {len(adgroup_instances)} Ad Group instances have been loaded into the database.")
+    print(
+        f"Success! {len(adgroup_instances)} Ad Group instances have been loaded into the database."
+    )
 
     # Campaign
-    file = open(
-        csv_dir_path + "/campaigns.csv"
-    )
+    file = open(csv_dir_path + "/campaigns.csv")
     records = csv.reader(file, delimiter=",")
 
     campaign_instances = []
@@ -43,13 +42,12 @@ def run():
                 )
             )
     Campaign.objects.bulk_create(campaign_instances)
-    print(f"Success! {len(campaign_instances)} Campaign instances have been loaded into the database.")
-
+    print(
+        f"Success! {len(campaign_instances)} Campaign instances have been loaded into the database."
+    )
 
     # SearchTerm
-    file = open(
-        csv_dir_path + "/search_terms.csv"
-    )
+    file = open(csv_dir_path + "/search_terms.csv")
     records = csv.reader(file, delimiter=",")
 
     search_term_instances = []
@@ -68,5 +66,6 @@ def run():
                 )
             )
     SearchTerm.objects.bulk_create(search_term_instances)
-    print(f"Success! {len(search_term_instances)} Search term instances have been loaded into the database.")
-
+    print(
+        f"Success! {len(search_term_instances)} Search term instances have been loaded into the database."
+    )
